@@ -117,3 +117,11 @@ res.writeHead(200, {
 Agora sim! =)
 
 Viu só? Não é tão complicado assim né? Claro que poderíamos implementar aplicações muito mais complexas do que essa prática, mas para prosseguirmos, contaremos com um _mini framework_ chamado 'Express.js', que tornará a criação e configuração de um servidor ainda mais simples!
+
+## PARTE 4 | nodemon
+
+Finalmente vamos instalar nosso primeiro (e único) `package` dessa prática, que é o [**nodemon**](https://www.npmjs.com/package/nodemon). Com ele não precisaremos mais ficar derrubando e levantando o servidor continuamente - ele fará esse trabalho para nós! Por ser muito útil, vamos instalar ele globalmente, com o comando `npm install -g nodemon`.
+
+E então rodamos `nodemon app.js`, de forma que ele ficará observando nosso arquivo `app.js` continuamente (até derrubarmos o _server_ com 'Control + C').
+
+Por fim, faça algumas mudanças no código para ver como ele reage. No exemplo, apenas alteramos as frases retornadas em cada rota.
