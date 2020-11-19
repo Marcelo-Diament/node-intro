@@ -84,3 +84,36 @@ http.createServer((req, res) => {
 ```
 
 **Dica:** instale a extensão JSON Viewer para visualizar o JSON mais bem formatado.
+
+## PARTE 3 | Rotas com node.js
+
+1. Para trabalharmos com rotas, usaremos a propriedade `url` da `request`. Podemos aplicar condições para exibir o conteúdo desejado usando... condicionais! hehehe Seja um `if` ou um `switch` (como fizemos com o `react-router-dom`):
+
+``` js
+switch (req.url) {
+    case '/':
+        res.end(`Você está na página inicial`)
+        break
+    case '/sobre':
+        res.end(`Você está na página Sobre`)
+        break
+    case '/produtos':
+        res.end(`Você está na página Produtos`)
+        break
+    default:
+        res.end(`Ops! Parece que não encontramos a página ${req.url}`)
+        break
+}
+```
+
+Note que voltamos a usar o conteúdo do tipo text/plain dessa vez. Mas... tem algo errado né? Os caracteres especiais estão sendo exibidos de forma estranha... então vamos corrigir isso atualizando nosso método `writeHead()` :
+
+``` js
+res.writeHead(200, {
+    'Content-Type': 'text/plain; charset=utf-8'
+})
+```
+
+Agora sim! =)
+
+Viu só? Não é tão complicado assim né? Claro que poderíamos implementar aplicações muito mais complexas do que essa prática, mas para prosseguirmos, contaremos com um _mini framework_ chamado 'Express.js', que tornará a criação e configuração de um servidor ainda mais simples!
