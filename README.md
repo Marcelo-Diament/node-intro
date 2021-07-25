@@ -125,3 +125,9 @@ Finalmente vamos instalar nosso primeiro (e único) `package` dessa prática, qu
 E então rodamos `nodemon app.js`, de forma que ele ficará observando nosso arquivo `app.js` continuamente (até derrubarmos o _server_ com 'Control + C').
 
 Por fim, faça algumas mudanças no código para ver como ele reage. No exemplo, apenas alteramos as frases retornadas em cada rota.
+
+## DESAFIO
+
+Criar um servidor que, caso a URL acessada contenha `admin`, retorne um status `403` e um objeto com as propriedades `status` (que receberá o número 403) e `erro`, que receberá a descrição do erro ('Área restrita').
+
+Caso contrário, deve retornar o status `200` e um `h1` com o texto: 'Você está na página `{{NOME DA PÁGINA}}`'. Considere as páginas 'Página Inicial', 'Sobre' e 'Produtos'. Caso a página não exista, retorne o texto 'Ops! Parece que não encontramos a página `{{CAMINHO ACESSADO}}`... Em caso de dúvidas, chame o cara do TI. huahuahuha' - sendo `{{CAMINHO ACESSADO}}` o trecho após `localhost:{{PORTA}}`, como `/contato`, por exemplo.
